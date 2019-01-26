@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import Header from './containers/header/header'
 import { Link } from 'react-router-dom';
 
-
 // -- Components
-import Search from 'containers/search';
+import Main from 'containers/main';
 
 
 
