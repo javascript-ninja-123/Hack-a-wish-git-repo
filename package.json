@@ -57,8 +57,8 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "components": "^0.1.0",
-    "file-loader": "^3.0.1",
     "fetch-mock": "^7.3.0",
+    "file-loader": "^3.0.1",
     "formik": "^1.4.2",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
