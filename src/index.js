@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logger from 'redux-logger';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -19,7 +20,7 @@ import Search from 'containers/search';
 // -- const declarations
 const epicMiddleware = createEpicMiddleware();
 const history = createHistory();
-const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+const store = createStore(rootReducer, applyMiddleware(epicMiddleware, logger));
 epicMiddleware.run(rootEpic);
 
 ReactDOM.render(

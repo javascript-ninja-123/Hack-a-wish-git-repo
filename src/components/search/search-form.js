@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage, withFormik } from 'formik';
 import { stringify, parse } from 'query-string';
 import { withRouter, Link } from 'react-router-dom';
@@ -8,6 +9,9 @@ import { pickBy, isEmpty } from 'lodash';
 // -- Components
 import { Input, Dropdown, LocationInput } from 'components/forms';
 
+// -- Actions
+import { search } from 'actions';
+
 class SearchForm extends Component {
   state = {
     isSubmitting: false,
@@ -16,12 +20,12 @@ class SearchForm extends Component {
   }
 
   componentDidMount() {
-    const { location: { search }, setValues } = this.props;
+    const { location: { search: searchLocation }, search } = this.props;
+    const query = parse(searchLocation);
 
-    console.log('componentDidMount', this.props, parse(search));
 
-    this.setState({ initialValues: parse(search) });
-    // TODO: Dispatch search action 
+    this.setState({ initialValues: query });
+    search(query);
   }
 
   onSubmit = (values, actions) => {
@@ -45,7 +49,6 @@ class SearchForm extends Component {
       onSubmit={this.onSubmit}>
         <Form> {/*TODO: Sample fields only*/}
           <Field placeholder="Illness" type="illness" name="illness" component={Input} />
-          <Field placeholder="Location" type="location" name="location" component={LocationInput} onSuggestSelect={this.props.onSuggestSelect} />
           <Field placeholder="Gender" type="gender"
             name="gender"
             component={Dropdown}
@@ -60,7 +63,14 @@ class SearchForm extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+  search: request => dispatch(search(request))
+});
 
 export default withRouter(withFormik({
   enableReinitialize: true
-})(SearchForm));
+})(connect(mapStateToProps, mapDispatchToProps)(SearchForm)));

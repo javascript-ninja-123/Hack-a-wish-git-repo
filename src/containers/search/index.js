@@ -30,7 +30,7 @@ class Search extends Component {
 
     return (<Fragment>
       <SearchForm onSuggestSelect={this.onSuggestSelect} />
-      <GoogleMaps
+      {/*<GoogleMaps
         isMarkerShown
         defaultCenter={mapLocation}
         lat={mapLocation.lat}
@@ -39,7 +39,7 @@ class Search extends Component {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}
-      />
+      />*/}
     </Fragment>);
   }
 }

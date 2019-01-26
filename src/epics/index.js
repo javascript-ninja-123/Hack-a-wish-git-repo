@@ -1,3 +1,7 @@
 import { combineEpics } from 'redux-observable';
 
-export const rootEpic = combineEpics();
+// -- Epics
+import { searchRootEpic } from 'epics/search';
+
+
+export const rootEpic = combineEpics(searchRootEpic);

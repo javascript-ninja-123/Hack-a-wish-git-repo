@@ -55,6 +55,7 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
+    "fetch-mock": "^7.3.0",
     "formik": "^1.4.2",
     "history": "^4.7.2",
     "lodash": "^4.17.11",
@@ -67,10 +68,13 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
     "redux-observable": "^1.0.0",
+    "reselect": "^4.0.0",
     "rxjs": "^6.3.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0",
-    "serviceworker-webpack-plugin": "1.0.1"
+    "serviceworker-webpack-plugin": "1.0.1",
+    "styled-components": "^4.1.3"
   }
 }
