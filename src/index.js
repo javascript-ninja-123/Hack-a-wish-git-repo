@@ -2,12 +2,33 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import createHistory from 'history/createBrowserHistory';
 import { createEpicMiddleware } from 'redux-observable';
+import { Switch, Router, Route } from 'react-router-dom';
 
 import './style/index.less';
 import './registerServiceWorker';
+
+import { rootReducer } from 'reducers';
+import { rootEpic } from 'epics';
+
+// -- Containers
 import App from './app';
+import Search from 'containers/search';
 
+// -- const declarations
+const epicMiddleware = createEpicMiddleware();
+const history = createHistory();
+const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+epicMiddleware.run(rootEpic);
 
-
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={history}>
+      <Switch>
+        <Route path="/search" component={Search} />
+        <Route path="/" component={App} />
+      </Switch>
+    </Router>
+  </Provider>,
+  document.getElementById('root'));
