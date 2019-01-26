@@ -1,11 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
+
+// -- Components
+import Search from 'containers/search';
+
 
 
 class App extends Component{
     render(){
         return(
-            <div>
-                APP
+          <div>
+            <Search /> {/*TODO: Add Router*/}
             </div>
         )
     }
