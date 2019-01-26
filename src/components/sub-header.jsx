@@ -14,15 +14,15 @@ height: 20px;
 `;
 const DonorsContainer = styled.div`
 margin-top: 50px;
-margin-left: 100px;
-width: 25%;
+margin-left: 65px;
+width: 400px;
 display: flex;
 justify-content: flex-start;
 align-items: center;
 `;
 const SearchContainer = styled.div`
 margin-top: 50px;
-width: 75%;
+width: calc(100% - 200px);
 display: flex;
 justify-content: flex-start;
 align-items: center;
@@ -34,6 +34,7 @@ cursor: pointer;
 font-weight: bold;
 user-select: none;
 font-size: 16px;
+flex-wrap: nowrap;
 border-bottom: ${({ selected }) => (selected ? '1px solid #0057B8' : '1px solid transparent')};
 `;
 
