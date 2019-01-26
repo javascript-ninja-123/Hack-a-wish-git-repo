@@ -52,6 +52,9 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
+    "bootstrap": "^4.2.1",
+    "components": "^0.1.0",
+    "file-loader": "^3.0.1",
     "formik": "^1.4.2",
     "google-map-react": "^1.1.2",
     "react": "^16.6.3",
@@ -63,6 +66,7 @@
     "rxjs": "^6.3.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0",
-    "serviceworker-webpack-plugin": "1.0.1"
+    "serviceworker-webpack-plugin": "1.0.1",
+    "styled": "^1.0.0"
   }
 }
