@@ -17,7 +17,7 @@ margin-top: 50px;
 margin-left: 65px;
 width: 400px;
 display: flex;
-justify-content: flex-start;
+justify-content: flex-end;
 align-items: center;
 `;
 const SearchContainer = styled.div`
@@ -55,10 +55,10 @@ class SubHeader extends PureComponent {
                 <DonorsContainer>
                     <Donors selected={selected} onClick={this.handleAnonymousClick}>Give Anonymously</Donors>
                     <div style={{ userSelect: 'none', color: '#C0C0C0', fontSize: '16px' }}>or</div>
-                    <Donors selected={!selected} onClick={this.handleDonorClick}>Donor Sign In</Donors>
+                    <Donors selected={!selected} onClick={this.handleDonorClick}>Sign In</Donors>
                 </DonorsContainer>
                 <SearchContainer>
-                    <div style={{ userSelect: 'none', color: '#C0C0C0', fontSize: '16px', marginRight: '20px' }}>|</div>
+                    <div style={{ userSelect: 'none', color: '#C0C0C0', fontSize: '16px', marginRight: '5px' }}>|</div>
                     <SVG style={{ marginTop: '3px' }} src={LocationIcon} />
                 </SearchContainer >
             </SubHeaderContainer>
