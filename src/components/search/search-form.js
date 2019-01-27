@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 import { Formik, Field, ErrorMessage, withFormik } from 'formik';
 import { stringify, parse } from 'query-string';
 import { withRouter, Link } from 'react-router-dom';
@@ -14,6 +15,10 @@ import { search } from 'actions';
 
 // -- Constants
 import { genders, illnesses, wishTypes } from 'utils/constants';
+
+const FieldWrapper = styled.div`
+  margin-bottom: 16px;
+`;
 
 class SearchForm extends Component {
   state = {
@@ -43,35 +48,47 @@ class SearchForm extends Component {
     const { isSubmitting, initialValues } = this.state;
     console.log(this.state);
     return (
-      <div style={{ display: 'relative', marginTop: '75px' }}>
+      <div style={{ display: 'relative', marginTop: '75px', width: '80%', marginLeft: '10%' }}>
+        <Formik
+          enableReinitialize={true}
+          initialValues={initialValues}
+          onSubmit={this.onSubmit}>
+          {({ handleSubmit, setValues }) => (
+            <Form onSubmit={handleSubmit}> {/*TODO: Sample fields only*/}
+              <FieldWrapper>
+                <label><b>Illness</b></label>
+                <Field placeholder="Illness"
+                  name="illness"
+                  component={Dropdown}
+                  options={illnesses} />
+              </FieldWrapper>
+              <FieldWrapper>
+                <label><b>Wish Type</b></label>
+                <Field placeholder="Wish Type"
+                  name="wishType"
+                  component={Dropdown}
+                  options={wishTypes} />
+              </FieldWrapper>
+              <FieldWrapper>
+                <label><b>Gender</b></label>
+                <Field placeholder="Gender"
+                  name="gender"
+                  component={Dropdown}
+                  options={genders} />
+              </FieldWrapper>
+              <FieldWrapper>
+                <label><b>Age</b></label>
+                <Field type="number" placeholder="Age" name="age" component={Input} />
+              </FieldWrapper>
+              <Button primary type="submit" disabled={isSubmitting}>
+                Submit
+           </Button>
+              <a onClick={() => setValues('')}>Clear</a>
+            </Form>
+          )}
+        </Formik>
       </div>
-      //   <Formik
-      //     enableReinitialize={true}
-      //     initialValues={initialValues}
-      //     onSubmit={this.onSubmit}>
-      //     {({ handleSubmit, setValues }) => (
-      //       <Form onSubmit={handleSubmit}> {/*TODO: Sample fields only*/}
-      //         <Field placeholder="Illness"
-      //           name="illness"
-      //           component={Dropdown}
-      //           options={illnesses} />
-      //         <Field placeholder="Wish Type"
-      //           name="wishType"
-      //           component={Dropdown}
-      //           options={wishTypes} />
-      //         <Field placeholder="Gender"
-      //           name="gender"
-      //           component={Dropdown}
-      //           options={genders} />
-      //         <Field type="number" placeholder="Age" name="age" component={Input} />
-      //         <Button type="submit" disabled={isSubmitting}>
-      //           Submit
-      //     </Button>
-      //         <a onClick={() => setValues('')}>Clear</a>
-      //       </Form>
-      //     )}
-      //   </Formik>
-      // </div>
+
     )
   }
 }
