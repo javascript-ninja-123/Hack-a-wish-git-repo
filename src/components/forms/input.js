@@ -3,11 +3,13 @@ import { Input as SemInput } from 'semantic-ui-react';
 
 export const Input = ({
   field, // { name, value, onChange, onBlur }
-  form: { touched, errors }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
+  form: { touched, errors, setFieldValue }, // also values, setXXXX, handleXXXX, dirty, isValid, status, etc.
   ...props
 }) => (
     <div>
-      <SemInput type="text" {...field} {...props} />
+      <SemInput  {...props} {...field} onChange={(e, val) => {
+        setFieldValue(field.name, val.value)
+      }} />
       {touched[field.name] &&
         errors[field.name] && <div className="error">{errors[field.name]}</div>}
     </div>
