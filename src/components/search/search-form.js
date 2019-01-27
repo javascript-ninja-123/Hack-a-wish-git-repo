@@ -80,11 +80,14 @@ class SearchForm extends Component {
                 <label><b>Age</b></label>
                 <Field type="number" placeholder="Age" name="age" component={Input} />
               </FieldWrapper>
-              <Button primary type="submit" disabled={isSubmitting}>
-                Submit
-           </Button>
-              <a onClick={() => setValues('')}>Clear</a>
+              <div style={{ textAlign: 'right' }}>
+                <Button primary type="submit" disabled={isSubmitting}>
+                  Submit
+                </Button>
+                <a onClick={() => setValues('')}>Clear</a>
+              </div>
             </Form>
+
           )}
         </Formik>
       </div>
