@@ -16,6 +16,7 @@ import { rootEpic } from 'epics';
 // -- Containers
 import App from './app';
 import Search from 'containers/search';
+import Profile from 'containers/profile';
 
 // -- const declarations
 const epicMiddleware = createEpicMiddleware();
@@ -28,6 +29,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/search" component={Search} />
+        <Route path="/profile" component={Profile} />
         <Route path="/" component={App} />
       </Switch>
     </Router>
