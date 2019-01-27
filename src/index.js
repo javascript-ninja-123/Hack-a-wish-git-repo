@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -19,6 +19,13 @@ import Search from 'containers/search';
 import Profile from 'containers/profile';
 
 // -- const declarations
+const logger = createLogger({
+  collapsed: true,
+  duration: true,
+  timestamp: true,
+  level: 'log',
+  diff: true,
+})
 const epicMiddleware = createEpicMiddleware();
 const history = createHistory();
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware, logger));
@@ -29,7 +36,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/search" component={Search} />
-        <Route path="/profile" component={Profile} />
+        <Route exact path="/profile" component={Profile} />
         <Route path="/" component={App} />
       </Switch>
     </Router>

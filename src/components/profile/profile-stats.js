@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Currency from 'react-currency-formatter';
 import { Statistic, Icon } from 'semantic-ui-react';
 
 
@@ -6,11 +7,11 @@ class ProfileStats extends Component {
   
 
   render() {
-    const { heartbeats } = this.props;
+    const { heartbeats, moneyRaised, donors } = this.props;
 
     return (<Statistic.Group>
       <Statistic>
-        <Statistic.Value>12</Statistic.Value>
+        <Statistic.Value>{donors}</Statistic.Value>
         <Statistic.Label>Donors</Statistic.Label>
       </Statistic>
 
@@ -20,7 +21,7 @@ class ProfileStats extends Component {
       </Statistic>
 
       <Statistic>
-        <Statistic.Value>$2,012</Statistic.Value>
+        <Statistic.Value><Currency pattern="##,### !" quantity={moneyRaised} currency="USD" /></Statistic.Value>
         <Statistic.Label>Raised</Statistic.Label>
       </Statistic>
     </Statistic.Group>);

@@ -1,6 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { Segment, Feed, Header, Grid, Button, Icon, Image, Divider, Progress, Comment } from 'semantic-ui-react';
+import Currency from 'react-currency-formatter';
+import { Segment, Feed, Header, Grid, Button, Icon, Image, Divider, Progress, Comment, Loader } from 'semantic-ui-react';
+
+import { fetchKidProfile } from 'actions';
+import { getProfile } from 'selectors';
 
 // -- Components
 import ProfileStats from './profile-stats'
@@ -57,37 +63,52 @@ class MainProfile extends Component {
     heartbeats: 89
   }
 
+  componentDidMount() {
+    this.props.fetchKidProfile();
+  }
+  
   increaseHeartbeat = () => {
     this.setState({ heartbeats: this.state.heartbeats + 1 });
   }
 
+  donate = () => {
+    return <Redirect  to="https://secure2.wish.org/site/SPageServer?pagename=donate_now&ft=SPEA&fi=19_22&chid=100-000&otgmthg=true&level1=1000&level2=500&level3=250&level4=100&level5=50&presel=level4&Campaign_ID=MNOO%25fy%25&Appeal_ID=%25fy%25ON-NET-SRCH&Package_ID=OT-NT-WEAD&gclid=CjwKCAiAyrXiBRAjEiwATI95mRjWaPX2L2NYM_h0h9qtbw3KDvLul3v2Rjbkfs7p4Q9a-R51G1uWTxoCFIwQAvD_BwE" />
+  }
+
+  getPercentageGoal = () => {
+    const { kidProfile: { results: { moneyRaised, goal } } } = this.props;
+    console.log(moneyRaised, goal)
+    return (moneyRaised / goal) * 100;
+  }
 
   render() {
-    const { fullname, illness, age, shortProfile, moneyRaised, thumbnailSrc } = this.props;
+    const { kidProfile: { results: { fullname, illness, age, longProfile, moneyRaised, thumbnailSrc, goal, donors }, isLoading } } = this.props;
     const { heartbeats } = this.state;
+
+    if (isLoading) {
+      return <Loader content='Loading' />;
+    }
 
     return (<Fragment>
       <Grid>
         <Grid.Column>
           <ProfileStatsWrapper>
-            <ProfileStats heartbeats={heartbeats} />
+            <ProfileStats heartbeats={heartbeats} moneyRaised={moneyRaised} donors={donors} />
           </ProfileStatsWrapper>
-          <Progress percent={20} indicating success progress>
-            $10,000 Goal
+          <Progress percent={this.getPercentageGoal()} indicating success progress>
+            <Currency quantity={goal} currency="USD" /> Goal
           </Progress>
         </Grid.Column>
       </Grid>
       <ProfileSegment>
         <Grid columns={2} relaxed='very'>
           <Grid.Column width={10}>
-            <ProfileHeader as="h1">Angelo Johnson, 1, fighting Cancer</ProfileHeader>
+            <ProfileHeader as="h1">{fullname}, {age}, fighting {illness}</ProfileHeader>
             <ProfileImage
               label={{ as: 'div', color: 'blue', content: 'I wish to be a Firefighter', icon: 'star', ribbon: true }}
-              src='/src/utils/request/mocks/images/kid1.jpg' size='medium' rounded />
+              src={thumbnailSrc} size='medium' rounded />
             <ProfileDescription>
-              When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines.
-              When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines
-              When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines
+              {longProfile}
             </ProfileDescription>
           </Grid.Column>
           <Grid.Column width={6}>
@@ -95,7 +116,7 @@ class MainProfile extends Component {
               <Button.Group>
                 <Button size="huge" onClick={this.increaseHeartbeat} negative>Give  &nbsp; <Icon name="heartbeat" /></Button>
                 <Button.Or />
-                <Button size="huge" positive>Donate</Button>
+                <Button size="huge" positive onClick={this.donate}>Donate</Button>
               </Button.Group>
             </Grid.Row>
             <Grid.Row>
@@ -242,4 +263,12 @@ class MainProfile extends Component {
   }
 }
 
-export default MainProfile;
+const mapStateToProps = state => ({
+  kidProfile: getProfile(state)
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchKidProfile: request => dispatch(fetchKidProfile(request))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainProfile);
