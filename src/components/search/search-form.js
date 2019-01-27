@@ -36,9 +36,9 @@ class SearchForm extends Component {
     this.setState({ initialValues: query });
   }
 
-  onSubmit = (values, actions) => {
+  onSubmit = (values, {resetForm}) => {
     const searchParams = pickBy(values, (val) => val);
-
+    resetForm({})
     this.props.history.push({
       search: stringify(searchParams)
     });

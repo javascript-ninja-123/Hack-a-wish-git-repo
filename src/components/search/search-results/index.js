@@ -27,7 +27,6 @@ class SearchResults extends Component {
 
   render() {
     const { searchState: { results, isLoading, error } } = this.props;
-
     return (<SearchResultsWrapper>
       {!isLoading && results.data &&
         results.data.map((item) => <SearchCard key={item.id} {...item} />)

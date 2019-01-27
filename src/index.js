@@ -16,8 +16,8 @@ import { rootEpic } from 'epics';
 // -- Containers
 import App from './app';
 import Search from 'containers/search';
-
-import Login from './components/login/login'
+import SignUp from './containers/signup/signup'
+import Login from './containers/login/login'
 import Register from './components/register/register'
 import Donate from './containers/donate/donate'
 
@@ -38,6 +38,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
+        <Route path='/login' component={Login}/>
+        <Route path='/signup' component={SignUp}/>
         <Route path='/donate' component={Donate}/>
         <Route path="/search" component={Search} />
         {/* <Route exact path="/profile" component={Profile} /> */}

@@ -23,6 +23,7 @@ const Header = () => {
                         <a href="#">Impact Of A Wish</a>
                         <a href="#">Get Involved</a>
                         <a href="#">Refer A Child</a>
+                        <Link to='/signup'>Sign Up</Link>
                     </ul>
                     <DonateConatiner className="donate"><Link to="/donate">Donate</Link></DonateConatiner>
                 </div>
