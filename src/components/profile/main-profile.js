@@ -121,6 +121,45 @@ class MainProfile extends Component {
                 </Button>
               </Button.Group>
             </Grid.Row>
+
+            <Grid.Row>
+              <br />
+              <Feed>
+                <Divider horizontal>Services Needed</Divider>
+                <FeedEvent>
+                  <Feed.Content>
+                    <Feed.Summary>
+                      <Icon name="check circle" color="green" /> Limousine service
+                    </Feed.Summary>
+                  </Feed.Content>
+                </FeedEvent>
+
+                <FeedEvent>
+                  <Feed.Content>
+                    <Feed.Summary>
+                      <Icon name="outline circle" color="green" /> Airline ticket to Anaheim
+                  </Feed.Summary>
+                  </Feed.Content>
+                </FeedEvent>
+
+                <FeedEvent>
+                  <Feed.Content>
+                    <Feed.Summary>
+                      <Icon name="outline circle" color="green" /> Disney Princess Clothing
+                  </Feed.Summary>
+                  </Feed.Content>
+                </FeedEvent>
+
+                <FeedEvent>
+                  <Feed.Content>
+                    <Feed.Summary>
+                      <Icon name="check circle" color="green" /> Hotel accommodations for 3 nights
+                  </Feed.Summary>
+                  </Feed.Content>
+                </FeedEvent>
+              </Feed>
+            </Grid.Row>
+
             <Grid.Row>
               <br />
               <Feed style={{ marginTop: '20px' }}>
@@ -154,7 +193,7 @@ class MainProfile extends Component {
         </Grid>
       </ProfileSegment>
       <ProfileSegment style={{ minWidth: '625px', width: '75%' }}>
-        <ProfileHeader as="h1">Updates from Angelo</ProfileHeader>
+        <ProfileHeader as="h1">Updates from Amelia</ProfileHeader>
         <br />
         <div>
           <Feed size='large'>
@@ -162,7 +201,7 @@ class MainProfile extends Component {
               <Feed.Label image='/src/utils/request/mocks/images/kid1.jpg' />
               <Feed.Content>
                 <Feed.Summary>
-                  <Feed.User>Angelo</Feed.User> just got approval from Doctor to travel
+                  <Feed.User>Amelia</Feed.User> just got approval from Doctor to travel
                   <Feed.Date>1 Hour Ago</Feed.Date>
                 </Feed.Summary>
                 <Feed.Meta>
@@ -178,8 +217,8 @@ class MainProfile extends Component {
               <Feed.Label image='/src/utils/request/mocks/images/kid1.jpg' />
               <Feed.Content>
                 <Feed.Summary>
-                  <Feed.User>Angelo</Feed.User> posted 6 photos
-                  <Feed.Date>4 Hour Ago</Feed.Date>
+                  <Feed.User>Amelia</Feed.User> posted 6 photos
+                  <Feed.Date>4 Hours Ago</Feed.Date>
                 </Feed.Summary>
 
                 <FeedExtra images>
@@ -210,8 +249,8 @@ class MainProfile extends Component {
               <Feed.Label image='/src/utils/request/mocks/images/kid1.jpg' />
               <Feed.Content>
                 <Feed.Summary>
-                  <Feed.User>Angelo</Feed.User> posted
-                  <Feed.Date>1 Hour Ago</Feed.Date>
+                  <Feed.User>Amelia</Feed.User> posted
+                  <Feed.Date>8 Hours Ago</Feed.Date>
                 </Feed.Summary>
                 <FeedExtra>
                   I will be having my 2nd chemotherapy on Friday. Please pray for good results.
@@ -229,7 +268,7 @@ class MainProfile extends Component {
               <Feed.Label image='/src/utils/request/mocks/images/kid1.jpg' />
               <Feed.Content>
                 <Feed.Summary>
-                  <Feed.User>Angelo</Feed.User> posted
+                  <Feed.User>Amelia</Feed.User> posted
                   <Feed.Date>Last Week</Feed.Date>
                 </Feed.Summary>
                 <FeedExtra>
@@ -241,21 +280,6 @@ class MainProfile extends Component {
                     89 Likes
                   </Feed.Like>
                 </Feed.Meta>
-                <Comment.Group>
-                  <Comment>
-                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
-                    <Comment.Content>
-                      <Comment.Author as='a'>Matt</Comment.Author>
-                      <Comment.Metadata>
-                        <div>Today at 5:42PM</div>
-                      </Comment.Metadata>
-                      <Comment.Text>How great!</Comment.Text>
-                      <Comment.Actions>
-                        <Comment.Action>Reply</Comment.Action>
-                      </Comment.Actions>
-                    </Comment.Content>
-                  </Comment>
-                </Comment.Group>
               </Feed.Content>
             </FeedEvent>
           </Feed>

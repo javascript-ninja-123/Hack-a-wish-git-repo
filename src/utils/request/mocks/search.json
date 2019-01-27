@@ -3,12 +3,10 @@
     {
       "id": 1,
       "age": 1,
-      "illness": "Cancer",
-      "firstName": "Angelo",
-      "awesomeName": "Awesomeness",
-      "moneyRaised": 8000,
-      "amountNeeded": 10000,
-      "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
+      "illness": "cancer",
+      "fullname": "Amelia",
+      "moneyRaised": 1234,
+      "shortProfile": "A young kid living in LA diagnosed with Cancer at age 5",
       "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
     },
     {
