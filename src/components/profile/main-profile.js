@@ -11,14 +11,24 @@ const ProfileStatsWrapper = styled.div`
 `;
 
 class MainProfile extends Component {
+  state = {
+    heartbeats: 89
+  }
+
+  increaseHeartbeat = () => {
+    this.setState({ heartbeats: this.state.heartbeats + 1 });
+  }
+
+
   render() {
     const { profileImgSrc, fullname, age } = this.props;
-
+    const { heartbeats } = this.state;
+    
     return (<Fragment>
       <Grid>
         <Grid.Column>
           <ProfileStatsWrapper>
-            <ProfileStats />
+            <ProfileStats heartbeats={heartbeats} />
           </ProfileStatsWrapper>
         </Grid.Column>
       </Grid>
@@ -34,7 +44,7 @@ class MainProfile extends Component {
           <Grid.Column width={6}>
             <Grid.Row>
               <Button.Group>
-                <Button size="huge" negative>Give  &nbsp; <Icon name="heartbeat" /></Button>
+                <Button size="huge" onClick={this.increaseHeartbeat} negative>Give  &nbsp; <Icon name="heartbeat" /></Button>
                 <Button.Or />
                 <Button size="huge" positive>Donate</Button>
               </Button.Group>
