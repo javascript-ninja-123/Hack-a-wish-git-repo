@@ -1,13 +1,13 @@
 {
   "data": {
-    "fullname": "Angelo Johnson",
-    "firstName": "Angelo",
+    "fullname": "Amelia",
+    "firstName": "Amelia",
     "lastName": "Johnson",
     "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg",
-    "age": 1,
+    "age": 5,
     "illness": "Cancer",
-    "longProfile": "When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines. When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines",
-    "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
+    "longProfile": "When Amelia wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines. When Amelia wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines When Amelia wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines",
+    "shortProfile": "A young kid living in LA diagnosed with Cancer at age 3",
     "heartbeats": 99,
     "goal": 10000,
     "moneyRaised": 2014,
