@@ -2,7 +2,7 @@ import React from 'react'
 import '../../style/header.less'
 import logo from '../header/make-a-wish-logo.svg'
 const Header = () => {
-    return(
+    return (
         <div className="header">
             <div className="row">
             <img src={logo} alt="make-a-wish" className="logo"/>
@@ -13,6 +13,7 @@ const Header = () => {
             <a href="#">Refer A Child</a>
             <a href="#" className="donate">Donate</a>
             </div>
+
             </div>
         </div>
     )

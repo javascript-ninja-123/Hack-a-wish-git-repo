@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Formik, Form, Field, ErrorMessage, withFormik } from 'formik';
+import { Formik, Field, ErrorMessage, withFormik } from 'formik';
 import { stringify, parse } from 'query-string';
 import { withRouter, Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 import { pickBy, isEmpty } from 'lodash';
 
 // -- Components
@@ -12,53 +12,61 @@ import { Input, Dropdown, LocationInput } from 'components/forms';
 // -- Actions
 import { search } from 'actions';
 
+// -- Constants
+import { genders, illnesses, wishTypes } from 'utils/constants';
+
 class SearchForm extends Component {
   state = {
     isSubmitting: false,
     mapLocation: {},
-    initialvalues: {}
+    initialValues: {}
   }
 
   componentDidMount() {
     const { location: { search: searchLocation }, search } = this.props;
     const query = parse(searchLocation);
+    console.log('componentDidMount', this.props, query);
 
-
-    this.setState({ initialValues: query });
     search(query);
+    this.setState({ initialValues: query });
   }
 
   onSubmit = (values, actions) => {
-    console.log('SearchForm.onSubmit', values, actions); //TODO: There is a bug in select not getting the selected value
-
     const searchParams = pickBy(values, (val) => val);
 
-    if (!isEmpty(searchParams)) {
-      this.props.history.push({
-        search: stringify(searchParams)
-      })
-    }
+    this.props.history.push({
+      search: stringify(searchParams)
+    });
   }
 
   render() {
     const { isSubmitting, initialValues } = this.state;
-
+    console.log(this.state);
     return <Formik
       enableReinitialize={true}
       initialValues={initialValues}
       onSubmit={this.onSubmit}>
-        <Form> {/*TODO: Sample fields only*/}
-          <Field placeholder="Illness" type="illness" name="illness" component={Input} />
-          <Field placeholder="Gender" type="gender"
+      {({ handleSubmit, setValues }) => (
+        <Form onSubmit={handleSubmit}> {/*TODO: Sample fields only*/}
+          <Field placeholder="Illness"
+            name="illness"
+            component={Dropdown}
+            options={illnesses} />
+          <Field placeholder="Wish Type"
+            name="wishType"
+            component={Dropdown}
+            options={wishTypes} />
+          <Field placeholder="Gender"
             name="gender"
             component={Dropdown}
-            options={[{ key: 'male', value: 'male', text: 'Male' }, { key: 'female', value: 'female', text: 'Female' }]} />
-          <Field placeholder="Age" type="age" name="age" component={Input} />
+            options={genders} />
+          <Field type="number" placeholder="Age" name="age" component={Input} />
           <Button type="submit" disabled={isSubmitting}>
             Submit
 		      </Button>
-          <Link to="/search">Clear Search</Link>
+          <a onClick={() => setValues('')}>Clear</a>
         </Form>
+      )}
     </Formik>;
   }
 }

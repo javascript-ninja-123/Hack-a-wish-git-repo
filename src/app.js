@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Header from './containers/header/header'
 import { Link } from 'react-router-dom';
 
@@ -8,18 +8,15 @@ import Main from 'containers/main';
 
 
 
-class App extends Component{
-    render(){
-        return(
-          <div>
-            <h1>Hack-A-Wish Main Page</h1>
-            <Header />
-        <ul>
-          <li><Link to="/search">Search</Link></li>
-        </ul>
-            </div>
-        )
-    }
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <Header />
+        <Main /> {/*TODO: Add Router*/}
+      </Fragment>
+    )
+  }
 }
 
 export default App
