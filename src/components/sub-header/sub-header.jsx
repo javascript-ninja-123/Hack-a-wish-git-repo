@@ -1,7 +1,7 @@
 import React, { Component, Fragment, PureComponent } from 'react';
 import styled from 'styled-components';
-import SVG from '../hoc/cached-svg'
-import LocationIcon from '../images/blue-location-icon.svg'
+import SVG from '../../hoc/cached-svg'
+import LocationIcon from '../../images/blue-location-icon.svg'
 
 
 //Styled Components

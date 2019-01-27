@@ -7,7 +7,7 @@ const Header = () => {
             <div className="row">
                 <img src={logo} alt="make-a-wish" className="logo" />
                 <ul>
-                    <a href="#" className="adopt">Adopt-A-Wish</a>
+                    <a href="#" className="adopt">Match-A-Wish</a>
                     <a href="#">Impact Of A Wish</a>
                     <a href="#">Get Involved</a>
                     <a href="#">Refer A Child</a>
