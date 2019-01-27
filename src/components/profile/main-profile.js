@@ -70,11 +70,7 @@ class MainProfile extends Component {
   increaseHeartbeat = () => {
     this.setState({ heartbeats: this.state.heartbeats + 1 });
   }
-
-  donate = () => {
-    return <Redirect to="https://secure2.wish.org/site/SPageServer?pagename=donate_now&ft=SPEA&fi=19_22&chid=100-000&otgmthg=true&level1=1000&level2=500&level3=250&level4=100&level5=50&presel=level4&Campaign_ID=MNOO%25fy%25&Appeal_ID=%25fy%25ON-NET-SRCH&Package_ID=OT-NT-WEAD&gclid=CjwKCAiAyrXiBRAjEiwATI95mRjWaPX2L2NYM_h0h9qtbw3KDvLul3v2Rjbkfs7p4Q9a-R51G1uWTxoCFIwQAvD_BwE" />
-  }
-
+  
   getPercentageGoal = () => {
     const { kidProfile: { results: { moneyRaised, goal } } } = this.props;
     console.log(moneyRaised, goal)
@@ -105,7 +101,7 @@ class MainProfile extends Component {
           <Grid.Column width={10}>
             <ProfileHeader as="h1">{fullname}, {age}, fighting {illness}</ProfileHeader>
             <ProfileImage
-              label={{ as: 'div', color: 'blue', content: 'I wish to be a Firefighter', icon: 'star', ribbon: true }}
+              label={{ as: 'div', color: 'blue', content: 'I wish to be a Disney Princess', icon: 'star', ribbon: true }}
               src={thumbnailSrc} size='medium' rounded />
             <ProfileDescription>
               {longProfile}
@@ -116,7 +112,7 @@ class MainProfile extends Component {
               <Button.Group>
                 <Button size="huge" onClick={this.increaseHeartbeat} negative>Give  &nbsp; <Icon name="heartbeat" /></Button>
                 <Button.Or />
-                <Button size="huge" positive onClick={this.donate}>
+                <Button size="huge" positive>
                   <a style={{ color: "white", fontSize: "unset" }} href="https://secure2.wish.org/site/SPageServer?pagename=donate_now&ft=SPEA&fi=19_22&chid=100-000&otgmthg=true&level1=1000&level2=500&level3=250&level4=100&level5=50&presel=level4&Campaign_ID=MNOO%25fy%25&Appeal_ID=%25fy%25ON-NET-SRCH&Package_ID=OT-NT-WEAD&gclid=CjwKCAiAyrXiBRAjEiwATI95mRjWaPX2L2NYM_h0h9qtbw3KDvLul3v2Rjbkfs7p4Q9a-R51G1uWTxoCFIwQAvD_BwE">Donate</a>
                 </Button>
               </Button.Group>
