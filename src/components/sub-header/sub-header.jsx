@@ -1,5 +1,10 @@
 import React, { Component, Fragment, PureComponent } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+
+// Actions
+import { showAnonymous, showSignIn } from 'actions/ui';
+
 import SVG from '../../hoc/cached-svg'
 import LocationIcon from '../../images/blue-location-icon.svg'
 
@@ -21,7 +26,7 @@ justify-content: flex-end;
 align-items: center;
 `;
 const SearchContainer = styled.div`
-margin-top: 50px;
+margin-top: 53px;
 width: calc(100% - 200px);
 display: flex;
 justify-content: flex-start;
@@ -43,13 +48,16 @@ class SubHeader extends PureComponent {
         selected: true,
     }
     handleAnonymousClick = () => {
+        this.props.showAnonymous();
         this.setState({ selected: true })
     }
     handleDonorClick = () => {
+        this.props.showSignIn();
         this.setState({ selected: false })
     }
     render() {
         const { selected } = this.state;
+
         return (
             <SubHeaderContainer>
                 <DonorsContainer>
@@ -60,9 +68,16 @@ class SubHeader extends PureComponent {
                 <SearchContainer>
                     <div style={{ userSelect: 'none', color: '#C0C0C0', fontSize: '16px', marginRight: '5px' }}>|</div>
                     <SVG style={{ marginTop: '3px' }} src={LocationIcon} />
+                    <span style={{ cursor: 'pointer', color: '#C0C0C0' }}>Make-A-Wish Greater Los Angeles</span>
                 </SearchContainer >
             </SubHeaderContainer>
         )
     }
 }
-export default SubHeader;
+
+const mapDispatchToProps = dispatch => ({
+    showAnonymous: state => dispatch(showAnonymous(state)),
+    showSignIn: state => dispatch(showSignIn(state))
+});
+
+export default connect(null, mapDispatchToProps)(SubHeader);

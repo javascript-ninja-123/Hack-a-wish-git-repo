@@ -3,38 +3,94 @@
     {
       "id": 1,
       "age": 1,
-      "illness": "cancer",
-      "fullname": "Angelo",
-      "moneyRaised": 1234,
+      "illness": "Cancer",
+      "firstName": "Angelo",
+      "awesomeName": "Awesomeness",
+      "moneyRaised": 8000,
+      "amountNeeded": 10000,
       "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
       "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
     },
     {
       "id": 2,
       "age": 1,
-      "illness": "cancer",
-      "fullname": "Angelo",
-      "moneyRaised": 1234,
-      "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
-      "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
+      "illness": "Coronary Artery Disease",
+      "firstName": "Karre",
+      "awesomeName": "The Great",
+      "moneyRaised": 1000,
+      "amountNeeded": 5000,
+      "product": "tickets",
+      "shortProfile": "A young kid living in LA diagnosed with Coronary Artery Disease at age 1",
+      "thumbnailSrc": "/src/utils/request/mocks/images/kid2.jpg"
     },
     {
       "id": 3,
-      "age": 1,
-      "illness": "cancer",
-      "fullname": "Angelo",
+      "age": 10,
+      "illness": "Cancer",
+      "firstName": "Arian",
+      "awesomeName": "The Untouchable",
       "moneyRaised": 1234,
+      "amountNeeded": 2000,
       "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
       "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
     },
     {
       "id": 4,
-      "age": 1,
-      "illness": "cancer",
-      "fullname": "Angelo",
+      "age": 12,
+      "illness": "Coronary Artery Disease",
+      "firstName": "Michelle",
+      "awesomeName": "Super Girl",
       "moneyRaised": 1234,
+      "amountNeeded": 1234,
+      "shortProfile": "A young kid living in LA diagnosed with Coronary Artery Disease at age 5",
+      "thumbnailSrc": "/src/utils/request/mocks/images/kid2.jpg"
+    },
+    {
+      "id": 5,
+      "age": 6,
+      "illness": "Cancer",
+      "firstName": "Angelo",
+      "awesomeName": "Awesomeness",
+      "moneyRaised": 2000,
+      "amountNeeded": 10000,
       "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
       "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
+    },
+    {
+      "id": 6,
+      "age": 9,
+      "illness": "Coronary Artery Disease",
+      "firstName": "Karre",
+      "awesomeName": "The Great",
+      "moneyRaised": 1234,
+      "amountNeeded": 2000,
+      "shortProfile": "A young kid living in LA diagnosed with Coronary Artery Disease at age 1",
+      "thumbnailSrc": "/src/utils/request/mocks/images/kid2.jpg"
+    },
+    {
+      "id": 7,
+      "age": 15,
+      "illness": "Cancer",
+      "firstName": "Arian",
+      "awesomeName": "The Untouchable",
+      "moneyRaised": 2000,
+      "amountNeeded": 5000,
+      "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
+      "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg"
+    },
+    {
+      "id": 8,
+      "age": 5,
+      "illness": "Coronary Artery Disease",
+      "firstName": "Michelle",
+      "awesomeName": "Super Girl",
+      "moneyRaised": 5238,
+      "amountNeeded": 7000,
+      "product": {
+        "tickets": true
+      },
+      "shortProfile": "A young kid living in LA diagnosed with Coronary Artery Disease at age 5",
+      "thumbnailSrc": "/src/utils/request/mocks/images/kid2.jpg"
     }
   ]
 }

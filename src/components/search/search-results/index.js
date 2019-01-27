@@ -11,11 +11,12 @@ import { getSearch } from 'selectors';
 // -- Styled Components
 const SearchResultsWrapper = styled.div`
   display: flex;
-
+  flex-flow: column nowrap;
+  margin: 15px;
+  margin-left: 15vw;
   & .ui.card {
     margin: 0 8px;
     padding: 0;
-
   }
 `;
 
