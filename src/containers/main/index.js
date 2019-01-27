@@ -13,7 +13,6 @@ class Main extends Component {
         const { getUI } = this.props;
         return (
             <Fragment>
-                <SubHeader />
                 {getUI.viewStatus && <SearchForm />}
                 {getUI.viewStatus && <SearchResults />}
             </Fragment>

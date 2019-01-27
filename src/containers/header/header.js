@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="row">
-                <img src={logo} alt="make-a-wish" className="logo" />
+                <Link to='/'><img src={logo} alt="make-a-wish" className="logo" /></Link>
                 <div className="row">
                     <ul>
                         <a href="#" className="adopt">Match-A-Wish</a>
