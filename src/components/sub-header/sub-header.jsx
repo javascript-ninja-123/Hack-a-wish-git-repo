@@ -16,10 +16,11 @@ justify-content: center;
 align-items: center;
 width: 100%;
 height: 20px;
+margin-bottom: 20px;
 `;
 const DonorsContainer = styled.div`
 margin-top: 50px;
-margin-left: 65px;
+margin-left:150px;
 width: 400px;
 display: flex;
 justify-content: flex-end;

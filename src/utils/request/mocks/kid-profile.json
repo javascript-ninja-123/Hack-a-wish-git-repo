@@ -1,0 +1,28 @@
+{
+  "data": {
+    "fullname": "Angelo Johnson",
+    "firstName": "Angelo",
+    "lastName": "Johnson",
+    "thumbnailSrc": "/src/utils/request/mocks/images/kid1.jpg",
+    "age": 1,
+    "illness": "Cancer",
+    "longProfile": "When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines. When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines When Angelo wants to forget about her condition, she fills her thoughts with castles, kingdoms and fairytales. Her imagination transports her to enchanted lands, where she is the reigning princess. Thanks to Make-A-Wish and Disney, Amelia was able to become the princess she imagines",
+    "shortProfile": "A young kid living in LA diagnosed with Cancer at age 1",
+    "heartbeats": 99,
+    "goal": 10000,
+    "moneyRaised": 2014,
+    "donors": 32,
+    "events": [
+      {
+        "title": "just got an approval from Doctor to travel",
+        "likes": 4,
+        "datePosted": ""
+      },
+      {
+        "title": "posted 6 photos",
+        "likes": 4,
+        "datePosted": ""
+      }
+    ]
+  }
+}

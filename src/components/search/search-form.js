@@ -44,33 +44,34 @@ class SearchForm extends Component {
     console.log(this.state);
     return (
       <div style={{ display: 'relative', marginTop: '75px' }}>
-        <Formik
-          enableReinitialize={true}
-          initialValues={initialValues}
-          onSubmit={this.onSubmit}>
-          {({ handleSubmit, setValues }) => (
-            <Form onSubmit={handleSubmit}> {/*TODO: Sample fields only*/}
-              <Field placeholder="Illness"
-                name="illness"
-                component={Dropdown}
-                options={illnesses} />
-              <Field placeholder="Wish Type"
-                name="wishType"
-                component={Dropdown}
-                options={wishTypes} />
-              <Field placeholder="Gender"
-                name="gender"
-                component={Dropdown}
-                options={genders} />
-              <Field type="number" placeholder="Age" name="age" component={Input} />
-              <Button type="submit" disabled={isSubmitting}>
-                Submit
-		      </Button>
-              <a onClick={() => setValues('')}>Clear</a>
-            </Form>
-          )}
-        </Formik>
       </div>
+      //   <Formik
+      //     enableReinitialize={true}
+      //     initialValues={initialValues}
+      //     onSubmit={this.onSubmit}>
+      //     {({ handleSubmit, setValues }) => (
+      //       <Form onSubmit={handleSubmit}> {/*TODO: Sample fields only*/}
+      //         <Field placeholder="Illness"
+      //           name="illness"
+      //           component={Dropdown}
+      //           options={illnesses} />
+      //         <Field placeholder="Wish Type"
+      //           name="wishType"
+      //           component={Dropdown}
+      //           options={wishTypes} />
+      //         <Field placeholder="Gender"
+      //           name="gender"
+      //           component={Dropdown}
+      //           options={genders} />
+      //         <Field type="number" placeholder="Age" name="age" component={Input} />
+      //         <Button type="submit" disabled={isSubmitting}>
+      //           Submit
+      //     </Button>
+      //         <a onClick={() => setValues('')}>Clear</a>
+      //       </Form>
+      //     )}
+      //   </Formik>
+      // </div>
     )
   }
 }

@@ -11,3 +11,9 @@ export const UIActionTypes = {
   OPEN_PROFILE: '[UI] OPEN_PROFILE',
   CLOSE_PROFILE: '[UI] CLOSE_PROFILE',
 }
+export const ProfileActionTypes = {
+  FETCH_KID_PROFILE: '[Profile] FETCH_KID_PROFILE /kid-profile',
+  FETCH_KID_PROFILE_FULFILLED: '[Profile] FETCH_KID_PROFILE_FULFILLED /kid-profile',
+  FETCH_KID_PROFILE_FAILED: '[Profile] FETCH_KID_PROFILE_FAILED /kid-profile',
+  FETCH_KID_PROFILE_LOADING: '[Profile] FETCH_KID_PROFILE_LOADING /kid-profile',
+}

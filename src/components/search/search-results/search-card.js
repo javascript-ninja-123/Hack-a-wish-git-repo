@@ -110,6 +110,7 @@ class SearchCard extends PureComponent {
     const raisedMoney = moneyRaised.toLocaleString();
     const goalMoney = amountNeeded.toLocaleString();
     const productGoal = product && product.tickets ? 1000 : 0;
+    const percentageNum = (Math.floor(((moneyRaised + productGoal) / amountNeeded) * 100));
     const percentage = (Math.floor(((moneyRaised + productGoal) / amountNeeded) * 100)) + '%';
     const completed = Boolean(percentage === '100%');
     const profileOpen = getUI.profileOpen;
@@ -152,7 +153,7 @@ class SearchCard extends PureComponent {
             </ProgressBar>
           </Progress>
         </ListCard>)}
-        {isProfileOpen && <MainProfile ref={e => (this.openedRef = e)} closeProfile={() => this.handleCloseProfile()} />}
+        {isProfileOpen && <MainProfile percentage={percentageNum} ref={e => (this.openedRef = e)} closeProfile={() => this.handleCloseProfile()} />}
       </div>
     );
   }
