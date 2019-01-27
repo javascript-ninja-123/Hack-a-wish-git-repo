@@ -16,7 +16,10 @@ import { rootEpic } from 'epics';
 // -- Containers
 import App from './app';
 import Search from 'containers/search';
-import Profile from 'containers/profile';
+
+import Login from './components/login/login'
+import Register from './components/register/register'
+
 
 // -- const declarations
 const logger = createLogger({
@@ -38,6 +41,8 @@ ReactDOM.render(
         <Route path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
         <Route path="/" component={App} />
+        <Route path='/login' component={Login}/>
+        <Route path='/register' component={Register}/>
       </Switch>
     </Router>
   </Provider>,
