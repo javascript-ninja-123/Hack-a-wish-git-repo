@@ -1,6 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../../style/header.less'
 import logo from '../header/make-a-wish-logo.svg'
+import styled from 'styled-components';
+
+const DonateConatiner = styled.div`
+    text-align:center;
+    a{
+        padding:0;
+        margin:0;
+    }
+`
+
 const Header = () => {
     return (
         <div className="header">
@@ -13,7 +24,7 @@ const Header = () => {
                         <a href="#">Get Involved</a>
                         <a href="#">Refer A Child</a>
                     </ul>
-                    <div className="donate">Donate</div>
+                    <DonateConatiner className="donate"><Link to="/donate">Donate</Link></DonateConatiner>
                 </div>
             </div>
         </div>

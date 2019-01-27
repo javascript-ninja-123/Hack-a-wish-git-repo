@@ -19,7 +19,7 @@ import Search from 'containers/search';
 
 import Login from './components/login/login'
 import Register from './components/register/register'
-
+import Donate from './containers/donate/donate'
 
 // -- const declarations
 const logger = createLogger({
@@ -38,6 +38,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
+        <Route path='/donate' component={Donate}/>
         <Route path="/search" component={Search} />
         {/* <Route exact path="/profile" component={Profile} /> */}
         <Route path="/" component={App} />
