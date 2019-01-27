@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Currency from 'react-currency-formatter';
@@ -57,6 +57,9 @@ const FeedExtra = styled(Feed.Extra)`
   font-size: 14px !important;
 `;
 
+const StyledLink = styled(Link)`
+  color:white !important;
+`
 
 class MainProfile extends Component {
   state = {
@@ -117,7 +120,7 @@ class MainProfile extends Component {
                 <Button style={{ borderRadius: '2px' }} size="huge" onClick={this.increaseHeartbeat} negative>Give  &nbsp; <Icon name="heartbeat" /></Button>
                 <Button.Or />
                 <Button style={{ borderRadius: '2px' }} size="huge" positive onClick={this.donate}>
-                  <a style={{ color: "white", fontSize: "unset" }} href="https://secure2.wish.org/site/SPageServer?pagename=donate_now&ft=SPEA&fi=19_22&chid=100-000&otgmthg=true&level1=1000&level2=500&level3=250&level4=100&level5=50&presel=level4&Campaign_ID=MNOO%25fy%25&Appeal_ID=%25fy%25ON-NET-SRCH&Package_ID=OT-NT-WEAD&gclid=CjwKCAiAyrXiBRAjEiwATI95mRjWaPX2L2NYM_h0h9qtbw3KDvLul3v2Rjbkfs7p4Q9a-R51G1uWTxoCFIwQAvD_BwE">Donate</a>
+                  <StyledLink to="/donate">Donate</StyledLink>
                 </Button>
               </Button.Group>
             </Grid.Row>
