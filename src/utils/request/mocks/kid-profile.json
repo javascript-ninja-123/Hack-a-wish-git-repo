@@ -11,6 +11,18 @@
     "heartbeats": 99,
     "goal": 10000,
     "moneyRaised": 2014,
-    "donors":  32
+    "donors": 32,
+    "events": [
+      {
+        "title": "just got an approval from Doctor to travel",
+        "likes": 4,
+        "datePosted": ""
+      },
+      {
+        "title": "posted 6 photos",
+        "likes": 4,
+        "datePosted": ""
+      }
+    ]
   }
 }
